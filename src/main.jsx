@@ -4,17 +4,26 @@ import App from "./App.jsx";
 import store from "./app/store.js";
 import { Provider } from "react-redux";
 import "./index.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+	Navigate,
+	RouterProvider,
+	createBrowserRouter,
+} from "react-router-dom";
 import Header from "./components/Header/Header.jsx";
+import PostModal from "./components/PostModal/PostModal.jsx";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <App />,
+		element: <Navigate to="/popular" />,
 	},
 	{
 		path: "/:subreddit",
 		element: <App />,
+	},
+	{
+		path: "/:subreddit/modal",
+		element: <PostModal />,
 	},
 ]);
 
