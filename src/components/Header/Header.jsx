@@ -3,7 +3,7 @@ import logo from "../../assets/LogoWithBackground.svg";
 import styles from "./Header.module.css";
 import SearchBar from "../SearchBar/SearchBar";
 
-export default function Header() {
+export default function Header({ currentSubReddit }) {
 	return (
 		<>
 			<nav className={styles.header_container}>
@@ -11,7 +11,7 @@ export default function Header() {
 					<h3>r/</h3>
 
 					{/* Template below, replace with actual selector for subreddits */}
-					<h3>facepalm</h3>
+					<h3>{currentSubReddit}</h3>
 				</div>
 				<img className={styles.logo} src={logo} />
 				<SearchBar />

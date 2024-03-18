@@ -10,11 +10,11 @@ import Header from "./components/Header/Header.jsx";
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <Header />,
+		element: <App />,
 	},
 	{
-		path: "/example",
-		element: <h1>Example</h1>,
+		path: "/:subreddit",
+		element: <App />,
 	},
 ]);
 
