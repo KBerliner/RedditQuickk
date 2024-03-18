@@ -1,0 +1,28 @@
+.search_input {
+	position: absolute;
+	right: 8vw;
+	top: 65px;
+	height: 4vw;
+	width: 24vw;
+	margin: 0;
+	padding: 0 2vw;
+	border: 0;
+	font-size: 24px;
+}
+
+.search_input:focus-visible {
+	margin: 0;
+	padding: 0 2vw;
+	outline: 0;
+}
+
+.search_icon {
+	position: absolute;
+	right: 5vw;
+	top: 65px;
+	width: 2vw;
+	height: 2vw;
+	background-color: white;
+	padding: 1vw;
+	cursor: pointer;
+}

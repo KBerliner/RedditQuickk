@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/LogoWithBackground.svg";
 import styles from "./Header.module.css";
+import SearchBar from "../SearchBar/SearchBar";
 
 export default function Header() {
 	return (
@@ -12,7 +13,8 @@ export default function Header() {
 					{/* Template below, replace with actual selector for subreddits */}
 					<h3>facepalm</h3>
 				</div>
-				<img src={logo} />
+				<img className={styles.logo} src={logo} />
+				<SearchBar />
 			</nav>
 		</>
 	);
