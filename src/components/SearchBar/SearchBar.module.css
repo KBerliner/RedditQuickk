@@ -8,6 +8,8 @@
 	padding: 0 2vw;
 	border: 0;
 	font-size: 24px;
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
 }
 
 .search_input:focus-visible {
@@ -25,4 +27,6 @@
 	background-color: white;
 	padding: 1vw;
 	cursor: pointer;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
 }
