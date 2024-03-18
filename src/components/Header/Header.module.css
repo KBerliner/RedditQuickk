@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap");
+
+.header_container {
+	width: 100vw;
+	margin: 0;
+	height: 180px;
+	background-color: #d9d9d9;
+	display: flex;
+}
+
+.header_container > img {
+	position: absolute;
+	top: 26px;
+	left: 50%;
+	margin-left: -64px;
+}
+
+.header_container > div {
+	display: flex;
+	position: absolute;
+	top: 65px;
+	left: 54px;
+}
+
+h3 {
+	margin: 0;
+	font-family: Manjari, sans-serif;
+	font-size: 42px;
+}
