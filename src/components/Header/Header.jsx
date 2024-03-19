@@ -8,6 +8,7 @@ export default function Header({
 	changeSubreddit,
 	subredditOptions,
 	currentSubReddit,
+	handleSearch,
 }) {
 	// Checking if the viewport is mobile
 	const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
@@ -25,6 +26,7 @@ export default function Header({
 						changeSubreddit={changeSubreddit}
 						subredditOptions={subredditOptions}
 						currentSubReddit={currentSubReddit}
+						handleSearch={(query) => handleSearch(query)}
 					/>
 				) : (
 					<>
@@ -43,7 +45,7 @@ export default function Header({
 							</select>
 						</div>
 						<img className={styles.logo} src={logo} />
-						<SearchBar />
+						<SearchBar handleSearch={(query) => handleSearch(query)} />
 					</>
 				)}
 			</nav>

@@ -5,7 +5,7 @@ import SearchIcon from "../../assets/SearchIcon.svg";
 
 import { useState } from "react";
 
-export default function SearchBar({ show }) {
+export default function SearchBar({ show, handleSearch }) {
 	// Checking if the viewport is mobile
 	const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
 
@@ -34,6 +34,7 @@ export default function SearchBar({ show }) {
 					show ? styles.search_icon_mobile : ""
 				}`}
 				src={SearchIcon}
+				onClick={() => handleSearch(query)}
 			/>
 		</>
 	);

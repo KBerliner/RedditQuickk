@@ -8,6 +8,7 @@ export default function MobileHeader({
 	changeSubreddit,
 	subredditOptions,
 	currentSubReddit,
+	handleSearch,
 }) {
 	const [showMenu, setShowMenu] = useState(false);
 
@@ -30,7 +31,7 @@ export default function MobileHeader({
 			{showMenu ? (
 				<>
 					<div className={styles.menu_background}>
-						<SearchBar show />
+						<SearchBar show handleSearch={(query) => handleSearch(query)} />
 						<select
 							value={currentSubReddit}
 							onInput={handleSubredditChange}

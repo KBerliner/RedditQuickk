@@ -41,8 +41,11 @@ function App() {
 	};
 
 	const changeSubreddit = (subreddit) => {
-		console.log(subreddit);
 		navigate(`/${subreddit}`);
+	};
+
+	const handleSearch = (query) => {
+		console.log(query);
 	};
 
 	viewingPost
@@ -56,6 +59,7 @@ function App() {
 					changeSubreddit={(subreddit) => changeSubreddit(subreddit)}
 					subredditOptions={tempSubReddits}
 					currentSubReddit={useParams()?.subreddit}
+					handleSearch={(query) => handleSearch(query)}
 				/>
 				{viewingPost ? (
 					<PostModal
