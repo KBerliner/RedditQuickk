@@ -11,19 +11,6 @@ import {
 } from "./features/subreddit/subredditsSlice";
 import { loadThesePosts, selectPosts } from "./features/posts/postsSlice";
 
-const tempPosts = [
-	{
-		title: "example",
-		subreddit_name_prefixed: "r/facepalm",
-		author: "user",
-	},
-	{
-		title: "example Two",
-		subreddit_name_prefixed: "r/funny",
-		author: "user Two",
-	},
-];
-
 function App() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -60,7 +47,12 @@ function App() {
 	};
 
 	const handleSearch = (query) => {
-		console.log(query);
+		dispatch(
+			loadThesePosts({
+				requestType: "search",
+				requestParameter: query,
+			})
+		);
 	};
 
 	viewingPost
