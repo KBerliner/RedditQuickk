@@ -8,14 +8,25 @@ export default function PostModal({ exitModal, information }) {
 		return false;
 	};
 
+	let image;
+
+	if (information.type === "image")
+		image = information.information.preview.images
+			? information.information.preview.images[0].resolutions[1].url
+			: information.information.thumbnail;
+
 	return (
 		<div>
 			<div onClick={() => exitModal({})} className={styles.modal_background}>
 				<div onClick={stopExit} className={styles.modal_container}>
-					<img />
+					{information.type == "image" ? (
+						<img src={image} />
+					) : (
+						<p>{information.information.selftext}</p>
+					)}
 					<div className={styles.post_info}>
-						<h2>{information.subreddit_name_prefixed}</h2>
-						<h3>u/{information.author}</h3>
+						<h2>{information.information.subreddit_name_prefixed}</h2>
+						<h3>u/{information.information.author}</h3>
 					</div>
 				</div>
 			</div>

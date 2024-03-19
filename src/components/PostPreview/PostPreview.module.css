@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap");
 
 .post_preview_container {
-	height: 500px;
+	/* height: 500px; */
 	width: 80vw;
 	margin: 50px 0;
 	display: flex;
@@ -10,8 +10,8 @@
 }
 
 .post_preview_image {
-	height: 100%;
-	width: 40%;
+	/* height: 100%; */
+	width: 100%;
 }
 
 .post_preview_title {

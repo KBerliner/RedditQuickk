@@ -31,7 +31,6 @@ function App() {
 
 	const subreddits = useSelector(selectSubreddits);
 	const posts = useSelector(selectPosts);
-	console.log(posts);
 
 	useEffect(() => {
 		dispatch(loadAllSubreddits());
