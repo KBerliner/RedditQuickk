@@ -81,7 +81,7 @@ function App() {
 
 	return (
 		<>
-			<div>
+			<div data-testid="app">
 				<Header
 					changeSubreddit={(subreddit) => changeSubreddit(subreddit)}
 					subredditOptions={subreddits}

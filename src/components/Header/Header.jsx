@@ -20,7 +20,11 @@ export default function Header({
 
 	return (
 		<>
-			<nav className={styles.header_container}>
+			<nav
+				data-testid="header"
+				className={styles.header_container}
+				data-subreddit={currentSubReddit}
+			>
 				{isMobile ? (
 					<MobileHeader
 						changeSubreddit={changeSubreddit}
