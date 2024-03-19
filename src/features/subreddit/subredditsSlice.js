@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { useNavigate } from "react-router-dom";
 
 export const loadAllSubreddits = createAsyncThunk(
 	"subreddits/loadAllSubreddits",
@@ -41,5 +42,6 @@ export const subredditSlice = createSlice({
 
 export const { loadSubreddits } = subredditSlice.actions;
 export const selectSubreddits = (state) => state.subreddits.subreddits;
+export const selectSubredditError = (state) => state.subreddits.hasError;
 
 export default subredditSlice.reducer;

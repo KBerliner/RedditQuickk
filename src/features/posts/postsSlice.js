@@ -59,5 +59,6 @@ export const postSlice = createSlice({
 
 export const { loadPosts } = postSlice.actions;
 export const selectPosts = (state) => state.posts.posts;
+export const selectPostError = (state) => state.posts.hasError;
 
 export default postSlice.reducer;

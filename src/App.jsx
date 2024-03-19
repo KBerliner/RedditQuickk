@@ -7,9 +7,14 @@ import PostModal from "./components/PostModal/PostModal";
 import { useDispatch, useSelector } from "react-redux";
 import {
 	loadAllSubreddits,
+	selectSubredditError,
 	selectSubreddits,
 } from "./features/subreddit/subredditsSlice";
-import { loadThesePosts, selectPosts } from "./features/posts/postsSlice";
+import {
+	loadThesePosts,
+	selectPostError,
+	selectPosts,
+} from "./features/posts/postsSlice";
 
 function App() {
 	const navigate = useNavigate();
@@ -18,6 +23,9 @@ function App() {
 
 	const subreddits = useSelector(selectSubreddits);
 	const posts = useSelector(selectPosts);
+
+	const postError = useSelector(selectPostError);
+	const subredditError = useSelector(selectSubredditError);
 
 	useEffect(() => {
 		dispatch(loadAllSubreddits());
@@ -28,6 +36,18 @@ function App() {
 			})
 		);
 	}, [dispatch]);
+
+	useEffect(() => {
+		postError || subredditError
+			? dispatch(
+					loadThesePosts({
+						requestType: "subreddit",
+						requestParameter: "home",
+					})
+			  )
+			: undefined;
+		navigate("/Home");
+	}, [postError, subredditError]);
 
 	const [viewingPost, setViewingPost] = useState(false);
 	const [postInfo, setPostInfo] = useState({});
