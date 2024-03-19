@@ -9,20 +9,18 @@ import {
 	RouterProvider,
 	createBrowserRouter,
 } from "react-router-dom";
-import PostModal from "./components/PostModal/PostModal.jsx";
+import ErrorElement from "./components/ErrorElement/ErrorElement.jsx";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Navigate to="/Home" />,
+		errorElement: <ErrorElement />,
 	},
 	{
 		path: "/:subreddit",
 		element: <App />,
-	},
-	{
-		path: "/:subreddit/modal",
-		element: <PostModal />,
+		errorElement: <ErrorElement />,
 	},
 ]);
 
