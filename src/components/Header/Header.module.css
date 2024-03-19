@@ -26,4 +26,46 @@ h3 {
 	margin: 0;
 	font-family: Manjari, sans-serif;
 	font-size: 42px;
+	border-bottom: 1px solid black;
+}
+
+.subreddit_selector {
+	background: transparent;
+	font-size: 42px;
+	font-family: Manjari, sans-serif;
+	max-width: 25vw;
+	text-wrap: nowrap;
+	text-overflow: ellipsis;
+	width: auto;
+	outline: none;
+	border: 0;
+	border-bottom: 1px solid black;
+}
+
+@media screen and (max-width: 700px) {
+	.subreddit_selector {
+		display: none;
+	}
+
+	h3 {
+		display: none;
+	}
+
+	.header_container > div {
+		position: static;
+	}
+
+	.mobile_menu_button {
+		width: 8vw;
+		height: 8px;
+		background-color: #b3b3b3;
+		position: absolute;
+		display: inline-block;
+		z-index: 10;
+		left: 50%;
+		margin-left: -4vw;
+		top: 164px;
+		border-radius: 12px;
+		cursor: pointer;
+	}
 }

@@ -8,7 +8,11 @@ export default function PostPreviewArea({ posts, viewPost }) {
 		<>
 			<div className={styles.post_preview_area_container}>
 				{posts.map((post) => (
-					<PostPreview viewPost={(info) => viewPost(info)} information={post} />
+					<PostPreview
+						key={post.title}
+						viewPost={(info) => viewPost(info)}
+						information={post}
+					/>
 				))}
 			</div>
 		</>

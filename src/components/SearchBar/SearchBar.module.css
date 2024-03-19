@@ -30,3 +30,24 @@
 	border-top-right-radius: 25px;
 	border-bottom-right-radius: 25px;
 }
+
+@media screen and (max-width: 700px) {
+	.search_input {
+		display: none;
+	}
+
+	.search_icon {
+		display: none;
+	}
+
+	.search_input.search_input_mobile {
+		position: absolute;
+		width: 24vw;
+		left: 50%;
+		margin-left: -12vw;
+		top: 120px;
+	}
+
+	.search_icon_mobile {
+	}
+}
