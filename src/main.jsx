@@ -9,13 +9,12 @@ import {
 	RouterProvider,
 	createBrowserRouter,
 } from "react-router-dom";
-import Header from "./components/Header/Header.jsx";
 import PostModal from "./components/PostModal/PostModal.jsx";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <Navigate to="/popular" />,
+		element: <Navigate to="/Home" />,
 	},
 	{
 		path: "/:subreddit",

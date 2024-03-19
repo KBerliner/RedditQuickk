@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import PostPreviewArea from "./components/PostPreviewArea/PostPreviewArea";
 import PostModal from "./components/PostModal/PostModal";
+import { useDispatch, useSelector } from "react-redux";
+import {
+	loadAllSubreddits,
+	selectSubreddits,
+} from "./features/subreddit/subredditsSlice";
+import { loadThesePosts, selectPosts } from "./features/posts/postsSlice";
 
 const tempPosts = [
 	{
@@ -18,20 +24,19 @@ const tempPosts = [
 	},
 ];
 
-const tempSubReddits = [
-	{
-		display_name: "Home",
-	},
-	{
-		display_name: "AskReddit",
-	},
-	{
-		display_name: "NoStupidQuestions",
-	},
-];
-
 function App() {
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const params = useParams();
+
+	const subreddits = useSelector(selectSubreddits);
+	const posts = useSelector(selectPosts);
+	console.log(posts);
+
+	useEffect(() => {
+		dispatch(loadAllSubreddits());
+		dispatch(loadThesePosts("subreddit", params?.subreddit));
+	}, [dispatch]);
 
 	const [viewingPost, setViewingPost] = useState(false);
 	const [postInfo, setPostInfo] = useState({});
@@ -57,8 +62,8 @@ function App() {
 			<div>
 				<Header
 					changeSubreddit={(subreddit) => changeSubreddit(subreddit)}
-					subredditOptions={tempSubReddits}
-					currentSubReddit={useParams()?.subreddit}
+					subredditOptions={subreddits}
+					currentSubReddit={params?.subreddit}
 					handleSearch={(query) => handleSearch(query)}
 				/>
 				{viewingPost ? (
@@ -69,10 +74,7 @@ function App() {
 				) : (
 					<></>
 				)}
-				<PostPreviewArea
-					viewPost={(info) => viewPost(info)}
-					posts={tempPosts}
-				/>
+				<PostPreviewArea viewPost={(info) => viewPost(info)} posts={posts} />
 			</div>
 		</>
 	);

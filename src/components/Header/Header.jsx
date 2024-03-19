@@ -38,9 +38,7 @@ export default function Header({
 								className={styles.subreddit_selector}
 							>
 								{subredditOptions.map((subreddit) => (
-									<option key={subreddit.display_name}>
-										{subreddit.display_name}
-									</option>
+									<option key={subreddit}>{subreddit}</option>
 								))}
 							</select>
 						</div>
