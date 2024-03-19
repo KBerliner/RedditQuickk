@@ -30,6 +30,7 @@ export default function MobileHeader({
 			{showMenu ? (
 				<>
 					<div className={styles.menu_background}>
+						<SearchBar show />
 						<select
 							value={currentSubReddit}
 							onInput={handleSubredditChange}

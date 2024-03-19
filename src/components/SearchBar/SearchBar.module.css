@@ -42,12 +42,23 @@
 
 	.search_input.search_input_mobile {
 		position: absolute;
-		width: 24vw;
+		width: 40vw;
 		left: 50%;
-		margin-left: -12vw;
-		top: 120px;
+		margin-left: calc(-25vw - 20px);
+		top: 200px;
+		z-index: 12;
+		display: inline-block;
+		font-size: 16px;
 	}
 
-	.search_icon_mobile {
+	.search_icon.search_icon_mobile {
+		display: inline-block;
+		position: absolute;
+		top: 200px;
+		right: 50%;
+		margin-right: calc(-21vw - 20px);
+		z-index: 12;
+		height: 40px;
+		width: 40px;
 	}
 }

@@ -12,8 +12,6 @@ export default function SearchBar({ show }) {
 	// This is for Development Purposes only
 	window.onresize = () => setIsMobile(window.innerWidth < 700);
 
-	const [showMobileMenu, setShowMobileMenu] = useState(false);
-
 	const [query, setQuery] = useState("");
 
 	const handleInput = ({ target }) => {

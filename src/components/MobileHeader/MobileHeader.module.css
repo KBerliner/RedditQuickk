@@ -48,6 +48,7 @@
 	background: transparent;
 	border: 0;
 	border-bottom: 1px solid black;
+	animation: fadeIn 500ms 100ms both alternate;
 }
 
 @keyframes showMenu {
@@ -65,5 +66,14 @@
 	}
 	100% {
 		transform: translateY(72vh);
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 100%;
 	}
 }
