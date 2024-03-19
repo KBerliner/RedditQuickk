@@ -43,3 +43,13 @@ div > p {
 	line-height: 24px;
 	overflow: scroll;
 }
+
+@media screen and (max-width: 700px) {
+	.modal_container {
+		flex-direction: column;
+	}
+
+	.post_info > h3 {
+		display: inline;
+	}
+}

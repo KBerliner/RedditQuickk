@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./PostPreview.module.css";
-import PostModal from "../PostModal/PostModal";
 
 export default function PostPreview({ information, viewPost }) {
+	const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
 	const type = information.thumbnail.length > 10 ? "image" : "text";
+
+	const handleClick = () => {
+		if (isMobile) {
+			type === "text" ? viewPost({ information, type }) : undefined;
+		} else {
+			viewPost({ information, type });
+		}
+	};
 
 	return (
 		<>
-			<div
-				onClick={() => viewPost({ information, type })}
-				className={styles.post_preview_container}
-			>
+			<div onClick={handleClick} className={styles.post_preview_container}>
 				{information.thumbnail.length > 10 ? (
 					<img
 						src={
