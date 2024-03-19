@@ -3,6 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const loadThesePosts = createAsyncThunk(
 	"posts/loadThesePosts",
 	async ({ requestType, requestParameter }) => {
+		console.log(requestType, requestParameter);
 		if (requestType === "search") {
 			const response = await fetch(
 				`https://api.reddit.com/search.json?q=${requestParameter}&raw_json=1`
@@ -12,7 +13,8 @@ export const loadThesePosts = createAsyncThunk(
 			return json;
 		} else if (requestType === "subreddit") {
 			const response = await fetch(
-				`https://api.reddit.com/${requestParameter
+				`https://api.reddit.com/r/${requestParameter
+					.toLowerCase()
 					.split(" ")
 					.join("")}.json?raw_json=1`
 			);

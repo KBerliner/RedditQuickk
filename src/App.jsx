@@ -34,7 +34,12 @@ function App() {
 
 	useEffect(() => {
 		dispatch(loadAllSubreddits());
-		dispatch(loadThesePosts("subreddit", params?.subreddit));
+		dispatch(
+			loadThesePosts({
+				requestType: "subreddit",
+				requestParameter: params?.subreddit,
+			})
+		);
 	}, [dispatch]);
 
 	const [viewingPost, setViewingPost] = useState(false);
@@ -45,6 +50,12 @@ function App() {
 	};
 
 	const changeSubreddit = (subreddit) => {
+		dispatch(
+			loadThesePosts({
+				requestType: "subreddit",
+				requestParameter: subreddit,
+			})
+		);
 		navigate(`/${subreddit}`);
 	};
 
