@@ -38,6 +38,18 @@
 	animation: showMenu 200ms both alternate;
 }
 
+.select_subreddit_mobile {
+	position: absolute;
+	top: 50vh;
+	left: 50%;
+	width: 78vw;
+	margin-left: -39vw;
+	font-size: 32px;
+	background: transparent;
+	border: 0;
+	border-bottom: 1px solid black;
+}
+
 @keyframes showMenu {
 	0% {
 		height: 0;

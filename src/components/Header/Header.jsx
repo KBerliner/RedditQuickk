@@ -24,6 +24,7 @@ export default function Header({
 					<MobileHeader
 						changeSubreddit={changeSubreddit}
 						subredditOptions={subredditOptions}
+						currentSubReddit={currentSubReddit}
 					/>
 				) : (
 					<>

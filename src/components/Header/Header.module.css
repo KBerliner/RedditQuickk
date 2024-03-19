@@ -54,18 +54,4 @@ h3 {
 	.header_container > div {
 		position: static;
 	}
-
-	.mobile_menu_button {
-		width: 8vw;
-		height: 8px;
-		background-color: #b3b3b3;
-		position: absolute;
-		display: inline-block;
-		z-index: 10;
-		left: 50%;
-		margin-left: -4vw;
-		top: 164px;
-		border-radius: 12px;
-		cursor: pointer;
-	}
 }
