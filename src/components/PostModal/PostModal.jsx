@@ -11,7 +11,7 @@ export default function PostModal({ exitModal, information }) {
 	let image;
 
 	if (information.type === "image")
-		image = information.information.preview.images
+		image = information.information?.preview?.images
 			? information.information.preview.images[0].resolutions[1].url
 			: information.information.thumbnail;
 

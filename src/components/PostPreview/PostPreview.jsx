@@ -6,6 +6,7 @@ export default function PostPreview({ information, viewPost }) {
 	const type = information.thumbnail.length > 10 ? "image" : "text";
 
 	const handleClick = () => {
+		console.log(information);
 		if (isMobile) {
 			type === "text" ? viewPost({ information, type }) : undefined;
 		} else {
