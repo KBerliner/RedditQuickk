@@ -7,7 +7,7 @@ export default function ErrorElement() {
 			<h1 data-testid="error-element">
 				Whoops! It looks like you've encountered an error. Here's a link back.
 			</h1>
-			<Link to="/home" />
+			<Link to="/home">Home</Link>
 		</>
 	);
 }
